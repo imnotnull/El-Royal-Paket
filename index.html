@@ -1,980 +1,1706 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Royal Premium Herbal Tea — Paket Slimming Pagi & Malam</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>CV. Serasi Setiap Langkah — Company Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-
-/* ============================================================
-   DESIGN SYSTEM — EL ROYAL PREMIUM HERBAL TEA
-   Warna: Hijau Tua + Putih + Gold
-   
-   Forest Green   #1A3A2A  — BG gelap utama
-   Green Mid      #234D38  — BG section gelap alternatif
-   Green Light    #2D6347  — Accent border
-   Gold           #C9A84C  — Accent premium
-   Gold Light     #E8C97A  — Highlight gold
-   Gold Dim       #9A7A30  — Gold muted
-   White Pure     #FFFFFF  — BG terang utama
-   Off White      #F8FBF8  — BG terang alternatif
-   Cream Green    #EDF5EE  — BG section terang warm
-   Body Dark      #D4E8DA  — Body text on dark
-   Muted Dark     #8AAD95  — Muted on dark
-   Body Light     #1A3A2A  — Body text on light
-   Muted Light    #4A7A5A  — Muted on light
-
-   FONT:
-   Display — Noto Serif (formal, terpercaya)
-   Body    — Nunito (rounded, sangat legible, ramah semua usia)
-
-   SIZING (min 20pt):
-   Display Large  : 42pt Noto Serif Bold
-   Headline       : 35pt Noto Serif Bold
-   Subhead        : 26pt Nunito 800
-   Body           : 22pt Nunito 400
-   Small          : 20pt Nunito 400  ← minimum
-   Button         : 24pt Nunito 900
-   Label          : 18pt Nunito 700 uppercase
-
-   SPACING:
-   Section pad    : 48px 32px
-   Gap elemen     : 20px
-   Border radius  : 16px card, 40px pill, 8px small
-   Lebar LP       : 654px
-   Text align     : center semua
-============================================================ */
-
 :root {
-  --green-deep:  #1A3A2A;
-  --green-mid:   #234D38;
-  --green-light: #2D6347;
-  --gold:        #C9A84C;
-  --gold-lt:     #E8C97A;
-  --gold-dim:    #9A7A30;
+  --cyan:        #00BCD4;
+  --cyan-d:      #0097A7;
+  --cyan-l:      #80DEEA;
+  --cyan-pale:   #E0F7FA;
+  --sky:         #29B6F6;
+  --navy:        #0B1B2B;
+  --slate:       #162537;
+  --mid:         #3A5572;
+  --muted:       #7A9AB5;
+  --silver:      #C5D8E8;
+  --off:         #F4F8FB;
   --white:       #FFFFFF;
-  --off-white:   #F8FBF8;
-  --cream-green: #EDF5EE;
-  --body-dk:     #D4E8DA;
-  --muted-dk:    #8AAD95;
-  --body-lt:     #1A3A2A;
-  --muted-lt:    #4A7A5A;
-
-  --font-serif:  'Noto Serif', Georgia, serif;
-  --font-body:   'Nunito', system-ui, sans-serif;
-  --r-sm: 8px; --r-md: 16px; --r-lg: 24px; --r-pill: 40px;
+  --gold:        #FFB300;
+  --gold-l:      #FFD54F;
+  --W: 794px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:#111922;
+  font-family:'Barlow',sans-serif;
+  display:flex;flex-direction:column;
+  align-items:center;gap:28px;
+  padding:72px 20px 60px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-body); background: #0D1F15; -webkit-font-smoothing: antialiased; }
-
-.lp {
-  width: 654px;
-  margin: 0 auto;
-  background: var(--green-deep);
-  overflow: hidden;
+/* ── FIXED TOP NAV ─────────────────────────────── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(11,27,43,.97);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(0,188,212,.2);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 28px;
 }
-
-/* ===== TYPOGRAPHY ===== */
-.t-display { font-family: var(--font-serif); font-size: 42pt; font-weight: 700; line-height: 1.15; }
-.t-headline { font-family: var(--font-serif); font-size: 35pt; font-weight: 700; line-height: 1.2; }
-.t-subhead  { font-family: var(--font-body);  font-size: 26pt; font-weight: 800; line-height: 1.3; }
-.t-body     { font-family: var(--font-body);  font-size: 22pt; font-weight: 400; line-height: 1.75; }
-.t-small    { font-family: var(--font-body);  font-size: 20pt; font-weight: 400; line-height: 1.65; }
-.t-label    { font-family: var(--font-body);  font-size: 18pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-
-.c-white   { color: #FFFFFF; }
-.c-gold    { color: var(--gold); }
-.c-gold-lt { color: var(--gold-lt); }
-.c-body-dk { color: var(--body-dk); }
-.c-muted-dk{ color: var(--muted-dk); }
-.c-body-lt { color: var(--body-lt); }
-.c-muted-lt{ color: var(--muted-lt); }
-.c-green   { color: var(--green-deep); }
-
-/* ===== SECTIONS ===== */
-.s-dark  { padding: 48px 32px; background: var(--green-deep); border-bottom: 3px solid rgba(201,168,76,0.15); text-align: center; }
-.s-mid   { padding: 48px 32px; background: var(--green-mid);  border-bottom: 3px solid rgba(201,168,76,0.12); text-align: center; }
-.s-white { padding: 48px 32px; background: var(--white);      border-bottom: 3px solid rgba(26,58,42,0.08);   text-align: center; }
-.s-off   { padding: 48px 32px; background: var(--off-white);  border-bottom: 3px solid rgba(26,58,42,0.06);   text-align: center; }
-.s-cream { padding: 48px 32px; background: var(--cream-green);border-bottom: 3px solid rgba(201,168,76,0.2);  text-align: center; }
-.s-gold  { padding: 48px 32px; background: linear-gradient(160deg,#B8902A,#E8C97A); border-bottom: 3px solid #A07820; text-align: center; }
-
-/* ===== DIVIDER ===== */
-.divider { display:flex; align-items:center; justify-content:center; gap:10px; margin: 14px auto 20px; }
-.div-line { width:40px; height:1px; background:var(--gold); opacity:0.5; }
-.div-diamond { width:6px; height:6px; background:var(--gold); transform:rotate(45deg); opacity:0.7; }
-.divider-lt .div-line { background:var(--green-light); opacity:0.3; }
-.divider-lt .div-diamond { background:var(--green-light); opacity:0.4; }
-
-/* ===== BADGES ===== */
-.badge {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--green-deep);
-  font-family: var(--font-body);
-  font-size: 18pt; font-weight: 900;
-  padding: 8px 24px;
-  border-radius: var(--r-pill);
-  letter-spacing: 0.05em;
-  margin-bottom: 14px;
+.nav-brand{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:2.5px;
+  color:var(--cyan);text-transform:uppercase;white-space:nowrap;
 }
-.badge-white {
-  display: inline-block;
-  background: var(--white);
-  color: var(--green-deep);
-  font-family: var(--font-body);
-  font-size: 18pt; font-weight: 900;
-  padding: 8px 24px;
-  border-radius: var(--r-pill);
-  margin-bottom: 14px;
+.nav-links{display:flex;gap:5px;flex-wrap:wrap;}
+.nav-links button{
+  background:none;border:1px solid rgba(0,188,212,.25);
+  color:var(--muted);font-family:'Barlow Condensed',sans-serif;
+  font-size:9.5px;font-weight:700;letter-spacing:1px;
+  padding:3px 9px;border-radius:2px;cursor:pointer;
+  text-transform:uppercase;transition:.15s;
 }
-.badge-outline {
-  display: inline-block;
-  background: transparent;
-  color: var(--gold);
-  border: 2px solid var(--gold);
-  font-family: var(--font-body);
-  font-size: 16pt; font-weight: 700;
-  padding: 6px 20px;
-  border-radius: var(--r-pill);
-  margin-bottom: 14px;
-}
-.badge-green {
-  display: inline-block;
-  background: var(--green-deep);
-  color: var(--gold);
-  font-family: var(--font-body);
-  font-size: 18pt; font-weight: 900;
-  padding: 8px 24px;
-  border-radius: var(--r-pill);
-  margin-bottom: 14px;
+.nav-links button:hover{background:var(--cyan);color:var(--navy);border-color:var(--cyan);}
+
+/* ── PAGE SHELL ─────────────────────────────────── */
+.page{
+  width:var(--W);min-height:1123px;
+  background:var(--white);position:relative;overflow:hidden;
+  box-shadow:0 24px 72px rgba(0,0,0,.55);flex-shrink:0;
 }
 
-/* ===== BUTTONS ===== */
-.cta-btn {
-  display: block; width: 100%;
-  padding: 20px 40px;
-  background: var(--gold);
-  color: var(--green-deep);
-  font-family: var(--font-body); font-size: 24pt; font-weight: 900;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  border: none; border-radius: var(--r-pill); cursor: pointer;
-  text-align: center; margin-top: 22px;
-  box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+/* ══════════════════════════════════════════════════
+   PAGE 1 — COVER
+══════════════════════════════════════════════════ */
+.p1{background:var(--navy);}
+.p1-accent-bar{height:4px;background:linear-gradient(90deg,var(--gold) 0%,var(--cyan) 40%,var(--cyan-l) 100%);}
+.p1-body{display:grid;grid-template-columns:1fr 1fr;min-height:1039px;}
+
+/* left */
+.p1-left{
+  padding:56px 44px 44px 52px;
+  display:flex;flex-direction:column;justify-content:space-between;
 }
-.cta-btn-dark {
-  display: block; width: 100%;
-  padding: 20px 40px;
-  background: var(--green-deep);
-  color: var(--gold);
-  font-family: var(--font-body); font-size: 24pt; font-weight: 900;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  border: none; border-radius: var(--r-pill); cursor: pointer;
-  text-align: center; margin-top: 22px;
+.p1-logo-row{display:flex;align-items:center;gap:14px;}
+.p1-logo-sq{
+  width:50px;height:50px;border-radius:8px;
+  background:var(--gold);display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;
+  color:var(--navy);letter-spacing:-1px;flex-shrink:0;
 }
-.cta-btn-outline {
-  display: block; width: 100%;
-  padding: 18px 40px;
-  background: transparent;
-  color: var(--gold);
-  border: 2.5px solid var(--gold);
-  font-family: var(--font-body); font-size: 22pt; font-weight: 800;
-  border-radius: var(--r-pill); cursor: pointer;
-  text-align: center; margin-top: 14px;
+.p1-logo-copy{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:2px;color:var(--muted);text-transform:uppercase;line-height:1.7;
 }
 
-/* ===== IMAGE PLACEHOLDERS ===== */
-.img-ph {
-  background: rgba(255,255,255,0.05);
-  border: 2px dashed rgba(201,168,76,0.25);
-  border-radius: var(--r-md);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  color: var(--muted-dk);
-  font-family: var(--font-body); font-size: 18pt;
-  gap: 10px; text-align: center; padding: 20px;
-  margin: 0 auto;
+.p1-center{margin-top:60px;}
+.p1-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,188,212,.12);border:1px solid rgba(0,188,212,.25);
+  border-radius:20px;padding:5px 14px;margin-bottom:24px;
 }
-.img-ph-light {
-  background: rgba(26,58,42,0.05);
-  border: 2px dashed rgba(26,58,42,0.15);
-  border-radius: var(--r-md);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  color: var(--muted-lt);
-  font-family: var(--font-body); font-size: 18pt;
-  gap: 10px; text-align: center; padding: 20px;
-  margin: 0 auto;
+.p1-pill-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;}
+.p1-pill-text{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2.5px;color:var(--cyan);text-transform:uppercase;
 }
-.img-ph svg, .img-ph-light svg { opacity: 0.3; }
+.p1-h1{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:72px;line-height:.88;color:var(--white);
+  text-transform:uppercase;letter-spacing:-1.5px;
+}
+.p1-h1 em{color:var(--cyan);font-style:normal;display:block;}
+.p1-h1 small{
+  display:block;font-size:28px;font-weight:300;
+  letter-spacing:5px;color:var(--muted);margin-top:10px;
+}
+.p1-rule{width:44px;height:2px;background:var(--gold);margin:28px 0;}
+.p1-tagline{font-size:13px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;max-width:260px;}
 
-/* ===== STORY TEXT BLOCKS ===== */
-.story-text {
-  font-family: var(--font-body);
-  font-size: 22pt; font-weight: 400;
-  line-height: 1.8;
-  color: var(--white);
-  text-align: center;
-  padding: 24px 8px;
+.p1-stats{display:flex;gap:28px;margin-top:40px;}
+.p1-stat-n{
+  font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:900;
+  color:var(--white);line-height:1;
 }
-.story-text-light {
-  font-family: var(--font-body);
-  font-size: 22pt; font-weight: 400;
-  line-height: 1.8;
-  color: var(--body-lt);
-  text-align: center;
-  padding: 24px 8px;
-}
-.story-highlight { color: var(--gold-lt); font-weight: 700; }
-.story-highlight-lt { color: var(--green-deep); font-weight: 700; }
+.p1-stat-n sup{font-size:18px;color:var(--cyan);}
+.p1-stat-l{font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:4px;}
 
-/* ===== BEFORE AFTER ===== */
-.ba-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 16px 0;
+.p1-footer-info{padding-top:32px;border-top:1px solid rgba(255,255,255,.07);}
+.p1-addr{font-size:10px;color:var(--muted);line-height:1.7;}
+.p1-contacts{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap;}
+.p1-contact-chip{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:3px;padding:5px 10px;
 }
-.ba-label {
-  display: block;
-  background: var(--gold);
-  color: var(--green-deep);
-  font-family: var(--font-body);
-  font-size: 20pt; font-weight: 900;
-  padding: 8px 0;
-  border-radius: 0 0 var(--r-md) var(--r-md);
-  text-align: center;
-  margin-top: -4px;
-}
+.p1-contact-chip svg{width:10px;height:10px;stroke:var(--cyan);fill:none;stroke-width:2;flex-shrink:0;}
+.p1-contact-chip span{font-size:10px;color:rgba(255,255,255,.55);}
 
-/* ===== PHOTO GRID ===== */
-.photo-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
-.photo-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 16px 0; }
-.photo-grid-22 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+/* right */
+.p1-right{position:relative;overflow:hidden;}
+.p1-right-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#0a2a3a 0%,#0b3d52 50%,#0a1e2e 100%);
+}
+.p1-grid-lines{
+  position:absolute;inset:0;opacity:.06;
+  background-image:
+    repeating-linear-gradient(0deg,var(--cyan) 0,var(--cyan) 1px,transparent 1px,transparent 48px),
+    repeating-linear-gradient(90deg,var(--cyan) 0,var(--cyan) 1px,transparent 1px,transparent 48px);
+}
+.p1-circles{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.p1-ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(0,188,212,.15);
+  transform:translate(-50%,-50%);
+}
+.p1-right-content{
+  position:relative;z-index:2;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:40px 30px;gap:12px;
+}
+.p1-img-main{
+  width:220px;height:220px;
+  background:rgba(0,188,212,.06);border:1px solid rgba(0,188,212,.18);border-radius:6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+}
+.p1-img-ph{font-size:9px;font-weight:700;letter-spacing:2px;color:rgba(0,188,212,.35);text-transform:uppercase;text-align:center;}
+.p1-img-row{display:flex;gap:10px;}
+.p1-img-sm{
+  width:100px;height:100px;
+  background:rgba(0,188,212,.04);border:1px solid rgba(0,188,212,.12);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;font-weight:700;letter-spacing:1.5px;color:rgba(0,188,212,.25);
+  text-transform:uppercase;text-align:center;padding:8px;
+}
+.p1-img-tag{
+  position:absolute;bottom:0;left:0;
+  background:var(--cyan);color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:800;
+  letter-spacing:1.5px;padding:4px 10px;text-transform:uppercase;
+}
+.p1-bottom-bar{
+  padding:18px 52px;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.p1-year{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,.15);text-transform:uppercase;}
 
-/* ===== INFLUENCER GRID ===== */
-.influencer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 16px 0;
+/* ══════════════════════════════════════════════════
+   SHARED PAGE HEADER
+══════════════════════════════════════════════════ */
+.ph{
+  height:88px;background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;position:relative;overflow:hidden;
 }
-.influencer-grid .main { grid-column: 1 / -1; }
-
-/* ===== CARDS ===== */
-.card-dark {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: var(--r-md);
-  padding: 22px;
-  margin-bottom: 14px;
-  text-align: center;
+.ph::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--cyan) 0%,var(--sky) 60%,transparent 100%);
 }
-.card-dark:last-child { margin-bottom: 0; }
-.card-light {
-  background: var(--white);
-  border: 2px solid rgba(26,58,42,0.08);
-  border-radius: var(--r-md);
-  padding: 22px;
-  margin-bottom: 14px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(26,58,42,0.06);
+.ph-left{display:flex;flex-direction:column;gap:3px;}
+.ph-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;color:var(--cyan);text-transform:uppercase;
 }
-.card-light:last-child { margin-bottom: 0; }
-.card-green {
-  background: var(--green-deep);
-  border: 2px solid var(--gold);
-  border-radius: var(--r-md);
-  padding: 22px;
-  margin-bottom: 14px;
-  text-align: center;
+.ph-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:900;
+  color:var(--white);text-transform:uppercase;letter-spacing:.5px;line-height:1;
 }
-.card-green:last-child { margin-bottom: 0; }
-
-/* ===== BENEFIT LIST ===== */
-.benefit-row {
-  display: flex; align-items: flex-start; gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(201,168,76,0.1);
-  text-align: left;
+.ph-brand{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:2px;color:rgba(255,255,255,.18);text-transform:uppercase;
 }
-.benefit-row:last-child { border-bottom: none; }
-.check-gold {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: 4px;
-}
-.check-white {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: 4px;
+.ph-ghost{
+  position:absolute;right:48px;top:50%;transform:translateY(-50%);
+  font-family:'Barlow Condensed',sans-serif;font-size:88px;font-weight:900;
+  color:rgba(255,255,255,.025);text-transform:uppercase;letter-spacing:-3px;pointer-events:none;
 }
 
-/* ===== INGREDIENT ===== */
-.ingredient-row {
-  display: flex; gap: 16px; align-items: flex-start;
-  background: rgba(232,201,122,0.08);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: var(--r-md);
-  padding: 18px;
-  margin-bottom: 12px;
-  text-align: left;
+/* SHARED FOOTER */
+.pf{
+  position:absolute;bottom:0;left:0;right:0;height:34px;
+  background:var(--off);border-top:1px solid var(--silver);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
 }
-.ingredient-row:last-child { margin-bottom: 0; }
-.ingredient-img {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: 2px dashed rgba(201,168,76,0.3);
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 32px;
-}
-.ingredient-row-light {
-  display: flex; gap: 16px; align-items: flex-start;
-  background: var(--white);
-  border: 1px solid rgba(26,58,42,0.1);
-  border-radius: var(--r-md);
-  padding: 18px;
-  margin-bottom: 12px;
-  text-align: left;
-  box-shadow: 0 2px 8px rgba(26,58,42,0.06);
-}
-.ingredient-row-light:last-child { margin-bottom: 0; }
+.pf span{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.pf-line{width:36px;height:1px;background:var(--cyan);}
 
-/* ===== ICON GRID ===== */
-.icon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-.icon-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: var(--r-md);
-  padding: 20px 14px;
-  text-align: center;
+/* BODY PADDING */
+.pb{padding:36px 48px 54px;}
+
+/* ══════════════════════════════════════════════════
+   PAGE 2 — VISION & MISSION
+══════════════════════════════════════════════════ */
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+.vm-card{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:30px 26px;position:relative;overflow:hidden;
 }
-.icon-circle {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 12px;
-  font-size: 28px;
+.vm-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cyan);}
+.vm-card.m::before{background:var(--gold);}
+.vm-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;color:var(--cyan);text-transform:uppercase;
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.vm-card.m .vm-eyebrow{color:var(--gold);}
+.vm-eyebrow::before{content:'';display:inline-block;width:18px;height:2px;background:currentColor;}
+.vm-head{
+  font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;
+  color:var(--navy);text-transform:uppercase;letter-spacing:.3px;
+  line-height:1;margin-bottom:14px;
+}
+.vm-text{font-size:12px;color:var(--mid);line-height:1.8;}
+.vm-bg-letter{
+  position:absolute;bottom:10px;right:14px;
+  font-family:'Barlow Condensed',sans-serif;font-size:96px;font-weight:900;
+  color:rgba(0,188,212,.045);line-height:1;pointer-events:none;text-transform:uppercase;
+}
+.vm-card.m .vm-bg-letter{color:rgba(255,179,0,.06);}
+
+.values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.val{
+  background:var(--navy);padding:22px 18px;border-radius:3px;text-align:center;
+}
+.val-ico{
+  width:38px;height:38px;border:1.5px solid rgba(0,188,212,.5);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+}
+.val-ico svg{width:16px;height:16px;stroke:var(--cyan);fill:none;stroke-width:1.5;}
+.val-t{
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;
+  color:var(--white);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;
+}
+.val-d{font-size:10.5px;color:var(--muted);line-height:1.6;}
+
+/* ══════════════════════════════════════════════════
+   PAGE 3 — FACILITIES OVERVIEW
+══════════════════════════════════════════════════ */
+.fac-intro{
+  background:var(--navy);padding:22px 28px;border-radius:3px;
+  margin-bottom:24px;display:flex;align-items:center;gap:20px;
+}
+.fac-intro-text{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.75;flex:1;}
+.fac-intro-badge{
+  background:var(--cyan);color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:1.5px;padding:12px 20px;text-transform:uppercase;text-align:center;
+  border-radius:2px;flex-shrink:0;line-height:1.5;
+}
+.fac-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.fac-card{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:24px 20px;border-top:3px solid var(--cyan);
+}
+.fac-card:nth-child(2){border-top-color:var(--sky);}
+.fac-card:nth-child(3){border-top-color:var(--gold);}
+.fac-card-head{
+  font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;
+  color:var(--navy);text-transform:uppercase;letter-spacing:.3px;margin-bottom:10px;
+}
+.fac-cap{
+  background:var(--navy);padding:12px 14px;border-radius:2px;margin-top:12px;
+}
+.fac-cap-label{font-size:8.5px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:2px;}
+.fac-cap-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--cyan);
+}
+.fac-desc{font-size:11px;color:var(--mid);line-height:1.7;}
+
+.fac-img-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;
+}
+.fac-img-box{
+  height:120px;background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.fac-img-lbl{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(11,27,43,.85);
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:1.5px;color:var(--cyan);text-transform:uppercase;
+  padding:5px 10px;text-align:center;
+}
+.fac-img-ph{font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--silver);text-transform:uppercase;text-align:center;padding:10px;}
+
+/* ══════════════════════════════════════════════════
+   PAGE 4 — CUTTING DEPT
+══════════════════════════════════════════════════ */
+.dept-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:24px;
+}
+.dept-name-block{}
+.dept-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;color:var(--cyan);text-transform:uppercase;
+  margin-bottom:6px;display:flex;align-items:center;gap:8px;
+}
+.dept-eyebrow::before{content:'';display:inline-block;width:20px;height:2px;background:var(--cyan);}
+.dept-h2{
+  font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:900;
+  color:var(--navy);text-transform:uppercase;line-height:1;
+}
+.dept-cap-box{
+  background:var(--navy);padding:16px 24px;border-radius:3px;text-align:right;
+  border-left:3px solid var(--cyan);
+}
+.dept-cap-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+.dept-cap-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;
+  color:var(--cyan);line-height:1;
+}
+.dept-cap-unit{font-size:11px;font-weight:600;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+
+.dept-body{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.dept-desc{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:24px 22px;
+}
+.dept-desc-text{font-size:12.5px;color:var(--mid);line-height:1.8;}
+.dept-specs{display:flex;flex-direction:column;gap:12px;}
+.spec-row{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:16px 18px;display:flex;align-items:center;gap:14px;
+}
+.spec-ico{
+  width:36px;height:36px;background:var(--navy);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.spec-ico svg{width:16px;height:16px;stroke:var(--cyan);fill:none;stroke-width:1.5;}
+.spec-label{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:2px;}
+.spec-val{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--navy);
 }
 
-/* ===== PROMO ===== */
-.promo-card {
-  background: rgba(255,255,255,0.06);
-  border: 2px solid rgba(201,168,76,0.25);
-  border-radius: var(--r-md);
-  padding: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-  position: relative;
-}
-.promo-card.best { border: 3px solid var(--gold); background: rgba(201,168,76,0.06); }
-.promo-badge {
-  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: var(--gold); color: var(--green-deep);
-  font-family: var(--font-body); font-size: 16pt; font-weight: 900;
-  padding: 4px 22px; border-radius: var(--r-pill); white-space: nowrap;
-}
-.price-coret { font-size: 20pt; text-decoration: line-through; color: var(--muted-dk); display: block; margin-bottom: 4px; }
-.price-main  { font-family: var(--font-serif); font-size: 38pt; font-weight: 700; color: var(--gold-lt); display: block; line-height: 1.1; }
-
-/* ===== KOMPAS BOX ===== */
-.press-box {
-  background: var(--white);
-  border-radius: var(--r-md);
-  padding: 20px;
-  margin: 16px 0;
-  text-align: left;
+.dept-img-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.dept-img{
+  height:148px;background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--silver);
+  text-transform:uppercase;text-align:center;padding:12px;
 }
 
-/* ===== GUARANTEE ===== */
-.guarantee-box {
-  background: rgba(201,168,76,0.08);
-  border: 2px solid rgba(201,168,76,0.3);
-  border-radius: var(--r-md);
-  padding: 22px;
-  text-align: center;
-  margin-top: 18px;
+/* ══════════════════════════════════════════════════
+   PAGE 5 — STITCHING DEPT  (reuses dept-* classes)
+══════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════
+   PAGE 6 — ASSEMBLY DEPT  (reuses dept-* classes)
+══════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════
+   PAGE 7 — PRODUCTION CAPACITY TABLE
+══════════════════════════════════════════════════ */
+.cap-intro{
+  background:var(--navy);padding:20px 28px;border-radius:3px;
+  display:flex;align-items:center;gap:28px;margin-bottom:28px;
+}
+.cap-intro-text{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.75;flex:1;}
+.cap-total{text-align:center;}
+.cap-total-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;color:var(--white);line-height:1;
+}
+.cap-total-num span{color:var(--cyan);}
+.cap-total-label{font-size:9.5px;font-weight:600;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:4px;}
+
+.cap-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;color:var(--cyan);text-transform:uppercase;
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.cap-eyebrow::before{content:'';display:inline-block;width:22px;height:2px;background:var(--cyan);}
+
+table.ctable{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:28px;}
+table.ctable th{
+  background:var(--navy);color:var(--white);
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;padding:11px 18px;text-align:left;
+}
+table.ctable th:last-child{text-align:right;}
+table.ctable td{padding:11px 18px;border-bottom:1px solid var(--silver);color:var(--mid);}
+table.ctable td:first-child{
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;
+  color:var(--navy);text-transform:uppercase;letter-spacing:.3px;
+}
+table.ctable td:last-child{
+  text-align:right;
+  font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--navy);
+}
+table.ctable tr:nth-child(even) td{background:var(--off);}
+.ctag{
+  display:inline-block;background:rgba(0,188,212,.1);color:var(--cyan);
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:1px;padding:2px 7px;border-radius:2px;margin-left:6px;
 }
 
-/* ===== CERT BADGES ===== */
-.cert-row {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
-  margin: 16px 0;
+/* ══════════════════════════════════════════════════
+   PAGE 8 — ORGANIZATION
+══════════════════════════════════════════════════ */
+.org-wrap{display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;}
+.org-node{
+  background:var(--navy);padding:14px 28px;border-radius:4px;
+  text-align:center;min-width:220px;
 }
-.cert-badge {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(201,168,76,0.25);
-  border-radius: var(--r-pill);
-  padding: 6px 16px;
-  font-family: var(--font-body); font-size: 18pt; font-weight: 700;
-  color: var(--gold-lt);
+.org-node.top{
+  border:1px solid rgba(0,188,212,.4);min-width:270px;
+  background:linear-gradient(135deg,var(--slate),var(--navy));
+}
+.org-role{
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:3px;
+}
+.org-name{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;
+  color:var(--white);text-transform:uppercase;
+}
+.org-name.empty{color:rgba(255,255,255,.3);font-style:italic;font-size:14px;}
+.org-vline{width:2px;height:26px;background:var(--cyan);margin:0 auto;}
+.org-hrow{display:flex;gap:14px;align-items:flex-start;justify-content:center;}
+.org-col{display:flex;flex-direction:column;align-items:center;}
+.org-mid{
+  background:var(--slate);border:1px solid rgba(0,188,212,.2);
+  padding:12px 16px;border-radius:3px;text-align:center;min-width:140px;
+}
+.org-mid .org-role{font-size:8px;}
+.org-mid .org-name{font-size:14px;}
+
+.org-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+.org-stat{
+  background:var(--off);border:1px solid var(--silver);border-top:3px solid var(--cyan);
+  padding:20px 16px;text-align:center;border-radius:0 0 3px 3px;
+}
+.org-stat:nth-child(2){border-top-color:var(--sky);}
+.org-stat:nth-child(3){border-top-color:var(--gold);}
+.org-sn{
+  font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;
+  color:var(--navy);line-height:1;
+}
+.org-sn sup{font-size:16px;color:var(--cyan);}
+.org-sl{font-size:10px;font-weight:600;letter-spacing:1.2px;color:var(--muted);text-transform:uppercase;margin-top:6px;}
+
+/* ══════════════════════════════════════════════════
+   PAGE 9 — WHY CHOOSE US
+══════════════════════════════════════════════════ */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+.why-card{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:22px 20px;display:flex;gap:14px;align-items:flex-start;
+}
+.why-ico{
+  width:44px;height:44px;background:var(--navy);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.why-ico svg{width:20px;height:20px;stroke:var(--cyan);fill:none;stroke-width:1.5;}
+.why-t{
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;
+  color:var(--navy);text-transform:uppercase;letter-spacing:.3px;margin-bottom:6px;
+}
+.why-d{font-size:11.5px;color:var(--mid);line-height:1.65;}
+
+.why-banner{
+  background:var(--navy);padding:24px 32px;border-radius:3px;
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+.why-bs{text-align:center;padding:0 16px;border-right:1px solid rgba(255,255,255,.07);}
+.why-bs:last-child{border-right:none;}
+.why-bn{
+  font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:900;
+  color:var(--white);line-height:1;
+}
+.why-bn sup{font-size:20px;color:var(--cyan);}
+.why-bl{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-top:6px;}
+
+/* ══════════════════════════════════════════════════
+   PAGE 10 — CONTACT & LOCATION
+══════════════════════════════════════════════════ */
+.loc-intro{
+  background:linear-gradient(135deg,var(--navy),#0b2a3a);
+  padding:28px 32px;border-radius:3px;margin-bottom:22px;
+  border-left:4px solid var(--cyan);
+}
+.loc-intro-head{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;
+  color:var(--white);text-transform:uppercase;margin-bottom:8px;
+}
+.loc-intro-text{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+
+.loc-main{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:28px 28px;margin-bottom:18px;border-top:3px solid var(--cyan);
+}
+.loc-tag{
+  display:inline-block;background:var(--navy);color:var(--cyan);
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;padding:3px 10px;border-radius:2px;text-transform:uppercase;margin-bottom:12px;
+}
+.loc-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;
+  color:var(--navy);text-transform:uppercase;margin-bottom:14px;
+}
+.loc-addr{font-size:12.5px;color:var(--mid);line-height:1.75;margin-bottom:18px;}
+
+.loc-contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.loc-contact-item{
+  background:var(--navy);padding:16px;border-radius:3px;
+  display:flex;align-items:center;gap:10px;
+}
+.loc-contact-item svg{width:14px;height:14px;stroke:var(--cyan);fill:none;stroke-width:1.5;flex-shrink:0;}
+.lci-text{}
+.lci-label{font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:3px;}
+.lci-val{font-size:11.5px;color:rgba(255,255,255,.7);font-weight:400;}
+
+.loc-workers-bar{
+  display:flex;align-items:center;gap:28px;
+  background:var(--navy);padding:20px 28px;border-radius:3px;margin-top:18px;
+}
+.loc-w-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--white);line-height:1;
+}
+.loc-w-num sup{font-size:24px;color:var(--cyan);}
+.loc-w-right{}
+.loc-w-label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+.loc-w-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.65;max-width:380px;}
+.loc-approval{
+  display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);
+  border-radius:2px;padding:4px 10px;
+}
+.loc-approval-dot{width:5px;height:5px;background:var(--cyan);border-radius:50%;}
+.loc-approval span{font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--cyan);text-transform:uppercase;}
+
+/* ══════════════════════════════════════════════════
+   PAGE 11 — BUSINESS PARTNERS (placeholder)
+══════════════════════════════════════════════════ */
+.partners-note{
+  background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  padding:20px 24px;margin-bottom:22px;
+}
+.partners-note p{font-size:12.5px;color:var(--mid);line-height:1.75;text-align:center;}
+
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;}
+.partner-box{
+  height:76px;background:var(--off);border:1px solid var(--silver);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  transition:.15s;
+}
+.partner-box::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--cyan);transform:scaleX(0);transition:.15s;transform-origin:left;
+}
+.partner-box:hover{border-color:var(--cyan);}
+.partner-box:hover::after{transform:scaleX(1);}
+.partner-box-name{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;
+  color:var(--navy);text-transform:uppercase;letter-spacing:1px;
+}
+.partner-box.placeholder .partner-box-name{
+  font-size:10px;letter-spacing:1.5px;color:var(--silver);font-weight:600;
 }
 
-/* ===== SP BAR ===== */
-.sp-bar {
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  border: 2px solid rgba(201,168,76,0.15);
-  border-radius: var(--r-md); overflow: hidden; margin-top: 20px;
+.partner-cta{
+  background:var(--navy);padding:22px 28px;border-radius:3px;
+  display:flex;align-items:center;justify-content:space-between;
 }
-.sp-item { padding: 18px 10px; text-align: center; border-right: 1px solid rgba(201,168,76,0.1); }
-.sp-item:last-child { border-right: none; }
-.sp-num { font-family: var(--font-serif); font-size: 28pt; font-weight: 700; color: var(--gold); display: block; line-height: 1.1; }
+.partner-cta-text{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.7;max-width:460px;}
+.partner-cta-badge{
+  background:var(--cyan);color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:1.5px;padding:12px 20px;text-transform:uppercase;border-radius:2px;flex-shrink:0;
+}
 
-/* ===== UTILS ===== */
-.mt-8  { margin-top: 8px; }
-.mt-12 { margin-top: 12px; }
-.mt-16 { margin-top: 16px; }
-.mt-20 { margin-top: 20px; }
-.mt-24 { margin-top: 24px; }
-.mt-32 { margin-top: 32px; }
+/* ══════════════════════════════════════════════════
+   PAGE 12 — CLOSING
+══════════════════════════════════════════════════ */
+.p12{background:var(--navy);min-height:1123px;display:flex;flex-direction:column;}
+.p12-accent{height:4px;background:linear-gradient(90deg,var(--gold),var(--cyan) 50%,var(--cyan-l));}
+.p12-body{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:60px 52px;text-align:center;position:relative;overflow:hidden;
+}
+.p12-grid-bg{
+  position:absolute;inset:0;opacity:.035;
+  background-image:
+    repeating-linear-gradient(0deg,var(--cyan) 0,var(--cyan) 1px,transparent 1px,transparent 56px),
+    repeating-linear-gradient(90deg,var(--cyan) 0,var(--cyan) 1px,transparent 1px,transparent 56px);
+}
+.p12-rings{position:absolute;inset:0;pointer-events:none;}
+.p12-ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(0,188,212,.07);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.p12-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,188,212,.1);border:1px solid rgba(0,188,212,.2);
+  border-radius:20px;padding:5px 14px;margin-bottom:24px;position:relative;z-index:2;
+}
+.p12-pill-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;}
+.p12-pill-text{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--cyan);text-transform:uppercase;}
+.p12-h1{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:88px;
+  color:var(--white);text-transform:uppercase;letter-spacing:-2px;line-height:.85;
+  position:relative;z-index:2;margin-bottom:6px;
+}
+.p12-h1 em{color:var(--cyan);font-style:normal;display:block;}
+.p12-sub{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:300;
+  letter-spacing:5px;color:var(--muted);text-transform:uppercase;
+  position:relative;z-index:2;margin-bottom:44px;
+}
+.p12-rule{width:56px;height:1px;background:rgba(0,188,212,.35);margin:0 auto 40px;position:relative;z-index:2;}
+.p12-contacts{
+  display:flex;gap:40px;justify-content:center;
+  position:relative;z-index:2;margin-bottom:44px;
+}
+.p12-ci{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.p12-ci-ico{
+  width:38px;height:38px;border:1px solid rgba(0,188,212,.35);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.p12-ci-ico svg{width:14px;height:14px;stroke:var(--cyan);fill:none;stroke-width:1.5;}
+.p12-ci-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.p12-ci-val{font-size:12px;color:rgba(255,255,255,.65);}
+.p12-logo{
+  display:flex;align-items:center;gap:14px;justify-content:center;
+  position:relative;z-index:2;
+}
+.p12-logo-sq{
+  width:48px;height:48px;background:var(--gold);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--navy);
+}
+.p12-logo-text{
+  font-family:'Barlow Condensed',sans-serif;font-size:10.5px;font-weight:600;
+  letter-spacing:2px;color:rgba(255,255,255,.25);text-transform:uppercase;line-height:1.7;text-align:left;
+}
+.p12-foot{
+  padding:18px 52px;border-top:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;
+}
+.p12-foot-text{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:1px;text-align:center;}
 
-/* ===== SVG icon ===== */
-svg.ic { opacity: 0.3; }
-
+/* ══════════════════════════════════════════════════
+   COPYWRITING REFERENCE PANEL
+══════════════════════════════════════════════════ */
+.copy-panel{
+  width:var(--W);background:#0d1520;
+  border:1px solid #1a2a3a;border-radius:6px;overflow:hidden;
+}
+.copy-header{
+  background:#091018;padding:14px 24px;
+  border-bottom:1px solid #1a2a3a;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.copy-header-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:3px;color:var(--cyan);text-transform:uppercase;
+}
+.copy-header-note{font-size:10px;color:#3a5070;font-style:italic;}
+.copy-sec{padding:18px 24px;border-bottom:1px solid #141f2a;}
+.copy-sec:last-child{border-bottom:none;}
+.copy-label{
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:3px;color:#2a4a6a;text-transform:uppercase;margin-bottom:7px;
+}
+.copy-t{
+  font-family:'Barlow',sans-serif;font-size:11.5px;color:#b0c8e0;line-height:1.8;
+  background:#06101a;padding:10px 14px;border-radius:3px;border:1px solid #152030;
+  user-select:all;cursor:text;white-space:pre-wrap;
+}
 </style>
 </head>
 <body>
-<div class="lp">
 
-<!-- ============================================================
-     SECTION 1: STORYTELLING
-============================================================ -->
-
-<!-- 1.1 HOOK + BEFORE/AFTER -->
-<div class="s-dark" style="padding-top:40px;">
-
-  <div class="t-display c-gold" style="font-style:italic; line-height:1.2;">
-    Baju yang Sama,<br>tapi Rasanya Beda Orang!
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-brand">CV. Serasi Setiap Langkah</div>
+  <div class="nav-links">
+    <button onclick="document.getElementById('pg1').scrollIntoView({behavior:'smooth'})">Cover</button>
+    <button onclick="document.getElementById('pg2').scrollIntoView({behavior:'smooth'})">Vision</button>
+    <button onclick="document.getElementById('pg3').scrollIntoView({behavior:'smooth'})">Facilities</button>
+    <button onclick="document.getElementById('pg4').scrollIntoView({behavior:'smooth'})">Cutting</button>
+    <button onclick="document.getElementById('pg5').scrollIntoView({behavior:'smooth'})">Stitching</button>
+    <button onclick="document.getElementById('pg6').scrollIntoView({behavior:'smooth'})">Assembly</button>
+    <button onclick="document.getElementById('pg7').scrollIntoView({behavior:'smooth'})">Capacity</button>
+    <button onclick="document.getElementById('pg8').scrollIntoView({behavior:'smooth'})">Org</button>
+    <button onclick="document.getElementById('pg9').scrollIntoView({behavior:'smooth'})">Why Us</button>
+    <button onclick="document.getElementById('pg10').scrollIntoView({behavior:'smooth'})">Contact</button>
+    <button onclick="document.getElementById('pg11').scrollIntoView({behavior:'smooth'})">Partners</button>
+    <button onclick="document.getElementById('pg12').scrollIntoView({behavior:'smooth'})">Closing</button>
   </div>
+</div>
 
-  <div class="divider mt-16">
-    <div class="div-line"></div>
-    <div class="div-diamond"></div>
-    <div class="div-line"></div>
-  </div>
-
-  <!-- Before / After -->
-  <div class="ba-row mt-16">
-    <div>
-      <div class="img-ph" style="aspect-ratio:3/4; border-radius:var(--r-md) var(--r-md) 0 0;">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-        <span>Foto DULU</span>
+<!-- ════════════════════════════════════════════════
+     PAGE 1 — COVER
+════════════════════════════════════════════════ -->
+<div class="page p1" id="pg1">
+  <div class="p1-accent-bar"></div>
+  <div class="p1-body">
+    <!-- LEFT -->
+    <div class="p1-left">
+      <div class="p1-logo-row">
+        <div class="p1-logo-sq">SSL</div>
+        <div class="p1-logo-copy">CV. Serasi<br>Setiap Langkah</div>
       </div>
-      <span class="ba-label">Dulu</span>
-    </div>
-    <div>
-      <div class="img-ph" style="aspect-ratio:3/4; border-radius:var(--r-md) var(--r-md) 0 0; border-color:rgba(201,168,76,0.5);">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-        <span>Foto SEKARANG</span>
+
+      <div class="p1-center">
+        <div class="p1-pill">
+          <div class="p1-pill-dot"></div>
+          <div class="p1-pill-text">Company Profile</div>
+        </div>
+        <div class="p1-h1">
+          Serasi<br>
+          <em>Setiap</em>
+          Langkah
+          <small>Our Profile</small>
+        </div>
+        <div class="p1-rule"></div>
+        <div class="p1-tagline">Manufacturing excellence in footwear — delivering precision, consistency, and care at every step.</div>
       </div>
-      <span class="ba-label">Sekarang</span>
-    </div>
-  </div>
 
-  <div class="story-text mt-16">
-    Kalau dulu aku gak beranikan diri nyoba <span class="story-highlight">"ini"</span> — mungkin aku gak bakal merasakan rasanya tampil dengan baju yang sama tapi berasa jadi orang yang benar-benar berbeda.
-  </div>
-</div>
+      <div>
+        <div class="p1-stats">
+          <div>
+            <div class="p1-stat-n">3<sup>+</sup></div>
+            <div class="p1-stat-l">Departments</div>
+          </div>
+          <div>
+            <div class="p1-stat-n">100<sup>+</sup></div>
+            <div class="p1-stat-l">Workers</div>
+          </div>
+          <div>
+            <div class="p1-stat-n">122<sup>K</sup></div>
+            <div class="p1-stat-l">Prs/Month</div>
+          </div>
+        </div>
 
-
-<!-- 1.2 CERITA AWAL — PASCA MELAHIRKAN -->
-<div class="s-mid">
-  <div class="story-text">
-    Ceritanya bermula setelah aku melahirkan — berat badan aku susah banget turun, dan itu bikin aku malas keluar rumah, malas ketemu siapapun karena rasa percaya diri aku udah di titik paling bawah.
-  </div>
-
-  <!-- Foto di RS -->
-  <div class="img-ph" style="aspect-ratio:4/3;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto di rumah sakit pasca melahirkan</span>
-  </div>
-
-  <div class="story-text mt-16">
-    Kondisi badan aku waktu itu jadi bahan komentar keluarga besar — aku jadi takut difoto, minder sama bentuk badan sendiri, dan perut buncit aku rasanya makin keliatan kemana-mana.
-  </div>
-
-  <!-- Foto minder difoto -->
-  <div class="photo-grid-2">
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto minder</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto minder</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- 1.3 KONFLIK — STRESS & NAFSU MAKAN -->
-<div class="s-dark">
-  <div class="story-text">
-    Hampir setiap hari aku cuma bisa nangis diam-diam. Dan ternyata baru aku sadari — karena terlalu banyak stress, nafsu makan aku malah meledak gak karuan.
-  </div>
-
-  <!-- Foto mata nangis -->
-  <div class="img-ph" style="aspect-ratio:16/9;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto close-up mata stress/sedih</span>
-  </div>
-
-  <!-- Foto makanan -->
-  <div class="photo-grid-2 mt-16">
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto jajanan/cemilan</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto makanan berat</span>
-    </div>
-  </div>
-
-  <div class="story-text mt-16">
-    Bukannya makin kurus, berat badan aku malah terus naik. Sampai akhirnya aku mutusin — cukup. Aku gak mau lagi dengerin omongan orang. Mulai dari sana aku tekatin buat olahraga dan makan yang lebih sehat.
-  </div>
-
-  <!-- Foto olahraga -->
-  <div class="photo-grid-2 mt-8">
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto olahraga outdoor</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto yoga/senam</span>
-    </div>
-  </div>
-
-  <div class="story-text mt-16">
-    Aku pilih fokus sama diri sendiri — berpikiran positif, jauh dari stress. Dan selain itu, aku juga mulai dibantu dengan rutin minum <span class="story-highlight">Teh Herbal El Royal.</span>
-  </div>
-
-  <!-- Foto minum teh El Royal -->
-  <div class="photo-grid-2 mt-8">
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto minum teh El Royal 1</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto minum teh El Royal 2</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- 1.4 TRANSISI — APA ITU EL ROYAL -->
-<div class="s-mid">
-  <div class="story-text">
-    Pasti kalian penasaran —
-  </div>
-  <div class="t-headline c-gold" style="font-style:italic; line-height:1.3;">
-    "Apa sih El Royal<br>Teh Herbal itu?"
-  </div>
-
-  <!-- Foto minum teh -->
-  <div class="img-ph mt-20" style="aspect-ratio:4/3;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto model minum teh / selfie dengan produk</span>
-  </div>
-
-  <div class="story-text mt-20">
-    <span class="story-highlight">El Royal Teh Herbal</span> adalah minuman teh khusus penurun berat badan. Pertama kali aku tau dari media — katanya teh herbal ini bisa bantu wujudkan berat badan ideal. Dari situ aku makin penasaran dan langsung cari tau lebih dalam.
-  </div>
-
-  <!-- Screenshot artikel Kompas -->
-  <div class="press-box mt-16">
-    <div class="img-ph-light" style="height:200px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Screenshot artikel KOMPAS.com<br>"El Royal Family Ciptakan Ragam Produk Teh Kesehatan"</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- 1.5 ARTIS & INFLUENCER -->
-<div class="s-dark">
-  <div class="story-text">
-    Dan ternyata banyak banget influencer dan artis ternama yang sudah lebih dulu nyoba <span class="story-highlight">Teh Herbal El Royal</span> ini — diantaranya ada Dinar Candy, Celine Evangelista, Violenzi, Madam Vlaminora, dan Ida Fitri Norma Yunita.
-  </div>
-
-  <!-- Grid foto artis -->
-  <div class="influencer-grid mt-16">
-    <div class="img-ph main" style="aspect-ratio:16/9;">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto artis utama (Dinar Candy / Celine)</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Artis 2</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Artis 3</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Artis 4</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Artis 5</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- 1.6 HASIL NYATA — SETELAH 2 MINGGU -->
-<div class="s-mid">
-  <div class="story-text">
-    Setelah kurang lebih dua minggu aku rutin minum <span class="story-highlight">Teh Herbal El Royal</span> pagi dan malam — pencernaan aku jadi lancar banget, dan yang bikin aku makin semangat, berat badan aku mulai turun!
-  </div>
-
-  <!-- Foto teh + timbangan -->
-  <div class="photo-grid-2 mt-16">
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto segelas teh El Royal</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:1;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto timbangan angka turun</span>
-    </div>
-  </div>
-
-  <div class="story-text mt-16">
-    Dan ini foto aku sekarang — nafsu makan aku sudah lebih terkontrol, dan aku jadi jauh lebih percaya diri setiap kali ketemu orang. 😍
-  </div>
-
-  <!-- Foto after — percaya diri -->
-  <div class="img-ph mt-16" style="aspect-ratio:3/4;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto after — tampil percaya diri (full body)</span>
-  </div>
-
-  <!-- Foto after lifestyle -->
-  <div class="photo-grid-2 mt-16">
-    <div class="img-ph" style="aspect-ratio:3/4;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto after lifestyle 1</span>
-    </div>
-    <div class="img-ph" style="aspect-ratio:3/4;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Foto after lifestyle 2</span>
-    </div>
-  </div>
-
-  <div class="story-text mt-20">
-    Dan setelah aku lihat testimoni dari banyak pengguna lain — ternyata pengalaman mereka sama seperti aku. Sudah banyak yang berhasil turunkan berat badan dengan <span class="story-highlight">Teh Herbal El Royal</span> ini.
-  </div>
-</div>
-
-
-<!-- ============================================================
-     SECTION 2: PRODUK
-============================================================ -->
-
-<!-- 2.1 HERO PRODUK -->
-<div class="s-dark" style="padding-top:40px;">
-
-  <div style="font-family:var(--font-body); font-size:18pt; font-weight:700; color:var(--gold-lt); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:10px;">El Royal Family</div>
-
-  <div class="t-display c-gold" style="letter-spacing:0.05em; line-height:1.1;">
-    DAPATKAN<br>TUBUH IDEAL
-  </div>
-  <div style="font-family:var(--font-body); font-size:24pt; font-weight:700; letter-spacing:0.2em; color:var(--body-dk); margin-top:8px;">DALAM 14 HARI</div>
-
-  <div class="divider mt-16">
-    <div class="div-line"></div>
-    <div class="div-diamond"></div>
-    <div class="div-line"></div>
-  </div>
-
-  <!-- Foto kedua produk -->
-  <div class="img-ph mt-8" style="aspect-ratio:4/3; border-color:rgba(201,168,76,0.4);">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto kedua produk:<br>El Royal Dawnty + Dusktee<br>dengan efek air & daun</span>
-  </div>
-
-  <!-- Sertifikasi -->
-  <div class="cert-row mt-20">
-    <div class="cert-badge">BPOM ✓</div>
-    <div class="cert-badge">ISO ✓</div>
-    <div class="cert-badge">GMP ✓</div>
-    <div class="cert-badge">HACCP ✓</div>
-  </div>
-
-  <div class="story-text mt-16">
-    <span class="story-highlight">EL ROYAL Premium Herbal Tea</span> adalah Paket Teh Tradisional yang terdiri dari <span class="story-highlight">Morning Slimming Tea (Dawnty)</span> &amp; <span class="story-highlight">Night Slimming Tea (Dusktee)</span> — teh pendamping diet dengan manfaat lengkap untuk tubuh &amp; pencernaan. Membantu mengendalikan nafsu makan, menurunkan kadar lemak jahat, dan mendukung pembentukan tubuh ideal.
-  </div>
-
-  <div class="card-dark mt-20">
-    <div class="t-subhead c-gold-lt">Sudah Jadi Favorit Jutaan Orang</div>
-    <div class="t-body c-body-dk mt-12">El Royal Premium Herbal Tea dipercaya sebagai minuman penurun berat badan terfavorit — karena khasiat &amp; manfaatnya yang sudah terbukti nyata.</div>
-  </div>
-
-  <div class="guarantee-box mt-20">
-    <div style="font-size:40px; margin-bottom:10px;">🛡️</div>
-    <div class="t-subhead c-gold">GARANSI UANG KEMBALI</div>
-    <div class="t-body c-body-dk mt-12">Jika tidak ada perubahan selama 14 hari pemakaian — uang kembali 100%.</div>
-  </div>
-</div>
-
-
-<!-- 2.2 PRODUK DETAIL + BPOM -->
-<div class="s-cream">
-  <div style="font-family:var(--font-body); font-size:18pt; font-weight:700; color:var(--muted-lt); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:14px;">El Royal Family</div>
-
-  <!-- Foto kedua kaleng produk -->
-  <div class="photo-grid-2 mt-8">
-    <div>
-      <div class="img-ph-light" style="aspect-ratio:1;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Foto El Royal<br>DAWNTY (hijau)</span>
-      </div>
-      <div style="background:var(--green-deep); color:var(--gold); font-family:var(--font-body); font-size:16pt; font-weight:700; padding:8px; border-radius:0 0 var(--r-sm) var(--r-sm); text-align:center;">BPOM: TR242001551</div>
-    </div>
-    <div>
-      <div class="img-ph-light" style="aspect-ratio:1;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Foto El Royal<br>DUSKTEE (biru)</span>
-      </div>
-      <div style="background:var(--green-deep); color:var(--gold); font-family:var(--font-body); font-size:16pt; font-weight:700; padding:8px; border-radius:0 0 var(--r-sm) var(--r-sm); text-align:center;">BPOM: TR242000171</div>
-    </div>
-  </div>
-
-  <!-- Screenshot BPOM -->
-  <div class="photo-grid-2 mt-16">
-    <div class="img-ph-light" style="height:140px;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Screenshot BPOM<br>Dawnty</span>
-    </div>
-    <div class="img-ph-light" style="height:140px;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-      <span>Screenshot BPOM<br>Dusktee</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- 2.3 MANFAAT -->
-<div class="s-dark">
-  <div class="badge mt-8">Manfaat</div>
-  <div class="t-headline c-white mt-12">EL ROYAL<br>PREMIUM HERBAL TEA</div>
-  <div class="divider mt-16">
-    <div class="div-line"></div>
-    <div class="div-diamond"></div>
-    <div class="div-line"></div>
-  </div>
-
-  <div style="margin-top:16px; text-align:left;">
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Membantu Proses Diet</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Menurunkan Berat Badan</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Melancarkan Pencernaan</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Membakar Lemak Jahat</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Mengendalikan Nafsu Makan</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Mengatasi Gejala Maag</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Menurunkan Tekanan Darah</div>
-    </div>
-    <div class="benefit-row">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Menurunkan Kolesterol</div>
-    </div>
-    <div class="benefit-row" style="border-bottom:none;">
-      <div class="check-gold"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1A3A2A" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
-      <div class="t-body c-white">Menjaga Metabolisme Tubuh</div>
-    </div>
-  </div>
-</div>
-
-
-<!-- 2.4 KANDUNGAN -->
-<div class="s-cream">
-  <div class="badge-green">Kandungan</div>
-  <div class="t-headline c-body-lt mt-12">EL ROYAL<br>PREMIUM HERBAL TEA</div>
-  <div class="divider divider-lt mt-16">
-    <div class="div-line"></div>
-    <div class="div-diamond"></div>
-    <div class="div-line"></div>
-  </div>
-
-  <div class="mt-16">
-    <div class="ingredient-row-light">
-      <div class="ingredient-img" style="background:var(--cream-green); border-color:rgba(26,58,42,0.2);">
-        <div class="img-ph-light" style="width:76px; height:76px; border-radius:50%; padding:8px; border:none; background:transparent;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <div class="p1-footer-info">
+          <div class="p1-addr">Jl. Dusun Kliwon, Rt.10/Rw.03, Kaliaren, Kec. Cilimus,<br>Kab. Kuningan, Jawa Barat – Indonesia</div>
+          <div class="p1-contacts">
+            <div class="p1-contact-chip">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.93 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.84 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+62 813-8888-3585</span>
+            </div>
+            <div class="p1-contact-chip">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>serasisetiaplangkah@gmail.com</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="flex:1; text-align:left;">
-        <div class="t-subhead c-body-lt" style="font-size:22pt;">Camellia Sinensis</div>
-        <div class="t-small c-muted-lt mt-8">Melancarkan proses pencernaan melalui stimulasi peristaltik dan produksi cairan pada saluran pencernaan.</div>
-      </div>
     </div>
 
-    <div class="ingredient-row-light">
-      <div class="ingredient-img" style="background:var(--cream-green); border-color:rgba(26,58,42,0.2);">
-        <div class="img-ph-light" style="width:76px; height:76px; border-radius:50%; padding:8px; border:none; background:transparent;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+    <!-- RIGHT -->
+    <div class="p1-right">
+      <div class="p1-right-bg"></div>
+      <div class="p1-grid-lines"></div>
+      <div class="p1-right-content">
+        <div class="p1-img-main" style="position:relative;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,188,212,0.25)" stroke-width="1" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="p1-img-ph">Product<br>Photo</div>
+          <div class="p1-img-tag">Footwear</div>
+        </div>
+        <div class="p1-img-row">
+          <div class="p1-img-sm">Cutting<br>Dept</div>
+          <div class="p1-img-sm">Factory<br>Floor</div>
         </div>
       </div>
-      <div style="flex:1; text-align:left;">
-        <div class="t-subhead c-body-lt" style="font-size:22pt;">Guazuma Ulmifolia</div>
-        <div class="t-small c-muted-lt mt-8">Membantu menurunkan kolesterol, anti diare, dan mengatasi gejala maag.</div>
-      </div>
     </div>
+  </div>
 
-    <div class="ingredient-row-light">
-      <div class="ingredient-img" style="background:var(--cream-green); border-color:rgba(26,58,42,0.2);">
-        <div class="img-ph-light" style="width:76px; height:76px; border-radius:50%; padding:8px; border:none; background:transparent;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        </div>
-      </div>
-      <div style="flex:1; text-align:left;">
-        <div class="t-subhead c-body-lt" style="font-size:22pt;">Cymbopogon Citratus</div>
-        <div class="t-small c-muted-lt mt-8">Daun serai — tanaman aromaterapi untuk meningkatkan mood, mengurangi stress, dan menyegarkan pernapasan.</div>
-      </div>
-    </div>
-
-    <div class="ingredient-row-light">
-      <div class="ingredient-img" style="background:var(--cream-green); border-color:rgba(26,58,42,0.2);">
-        <div class="img-ph-light" style="width:76px; height:76px; border-radius:50%; padding:8px; border:none; background:transparent;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        </div>
-      </div>
-      <div style="flex:1; text-align:left;">
-        <div class="t-subhead c-body-lt" style="font-size:22pt;">Mentha Piperita</div>
-        <div class="t-small c-muted-lt mt-8">Mendukung proses pembentukan tubuh saat diet, mencegah gangguan pencernaan, dan membatasi risiko penambahan berat badan.</div>
-      </div>
-    </div>
-
-    <div class="ingredient-row-light">
-      <div class="ingredient-img" style="background:var(--cream-green); border-color:rgba(26,58,42,0.2);">
-        <div class="img-ph-light" style="width:76px; height:76px; border-radius:50%; padding:8px; border:none; background:transparent;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        </div>
-      </div>
-      <div style="flex:1; text-align:left;">
-        <div class="t-subhead c-body-lt" style="font-size:22pt;">Hibiscus Sabdariffa</div>
-        <div class="t-small c-muted-lt mt-8">Tanaman obat tradisional untuk menjaga berat badan, alternatif terapi bagi penderita tekanan darah tinggi dan kolesterol.</div>
-      </div>
-    </div>
+  <div class="p1-bottom-bar">
+    <div class="p1-year">Est. — Kuningan, West Java</div>
+    <div class="p1-year">Confidential · For Business Use Only</div>
   </div>
 </div>
 
-
-<!-- 2.5 KENAPA HARUS EL ROYAL -->
-<div class="s-dark">
-  <div class="t-headline c-white" style="font-style:italic;">Kenapa Harus</div>
-  <div class="t-headline c-gold" style="margin-top:4px;">EL ROYAL<br>PREMIUM HERBAL TEA?</div>
-  <div class="divider mt-16">
-    <div class="div-line"></div>
-    <div class="div-diamond"></div>
-    <div class="div-line"></div>
+<!-- ════════════════════════════════════════════════
+     PAGE 2 — VISION & MISSION
+════════════════════════════════════════════════ -->
+<div class="page" id="pg2">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">02 / 12</div>
+      <div class="ph-title">Vision &amp; Mission</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Vision</div>
   </div>
+  <div class="pb">
+    <div class="vm-grid">
+      <div class="vm-card">
+        <div class="vm-eyebrow">Vision</div>
+        <div class="vm-head">Our<br>Vision</div>
+        <div class="vm-text">To be the most trusted partner for brands — delivering reliable, end-to-end manufacturing solutions for shoes, garments, and accessories with precision, consistency, and care.</div>
+        <div class="vm-bg-letter">V</div>
+      </div>
+      <div class="vm-card m">
+        <div class="vm-eyebrow">Mission</div>
+        <div class="vm-head">Our<br>Mission</div>
+        <div class="vm-text">Our mission is to deliver innovative, high-quality manufacturing solutions for shoes, garments, and accessories by advancing technology, optimizing production, and providing efficient, reliable services that help our partners bring exceptional products to market — faster, smarter, and with confidence.</div>
+        <div class="vm-bg-letter">M</div>
+      </div>
+    </div>
 
-  <div class="icon-grid mt-8">
-    <div class="icon-card">
-      <div class="icon-circle">⚖️</div>
-      <div class="t-small c-body-dk" style="font-size:20pt; font-weight:700;">Turunkan Berat Badan dengan Cepat &amp; Sehat</div>
+    <div class="values-row">
+      <div class="val">
+        <div class="val-ico">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="val-t">Precision</div>
+        <div class="val-d">Every cut, stitch, and assembly step executed to the highest standard.</div>
+      </div>
+      <div class="val">
+        <div class="val-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="val-t">Reliability</div>
+        <div class="val-d">Consistent output and on-time delivery for every partner, every order.</div>
+      </div>
+      <div class="val">
+        <div class="val-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="val-t">Innovation</div>
+        <div class="val-d">Continuously improving processes to bring better products to market faster.</div>
+      </div>
     </div>
-    <div class="icon-card">
-      <div class="icon-circle">🍽️</div>
-      <div class="t-small c-body-dk" style="font-size:20pt; font-weight:700;">Mengendalikan Nafsu Makan</div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 02</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 3 — FACILITIES OVERVIEW
+════════════════════════════════════════════════ -->
+<div class="page" id="pg3">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">03 / 12</div>
+      <div class="ph-title">Facilities &amp; Capabilities</div>
     </div>
-    <div class="icon-card">
-      <div class="icon-circle">❤️</div>
-      <div class="t-small c-body-dk" style="font-size:20pt; font-weight:700;">Menurunkan Kolesterol &amp; Gula Darah</div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Facilities</div>
+  </div>
+  <div class="pb">
+    <div class="fac-intro">
+      <div class="fac-intro-text">CV. Serasi Setiap Langkah operates a fully integrated footwear manufacturing facility in Kuningan, West Java. Our production capabilities span the complete shoe-making process — from raw material cutting through stitching to final assembly — supported by modern machinery and a skilled workforce of over 100 people.</div>
+      <div class="fac-intro-badge">Shoes<br>Garments<br>&amp; Accessories</div>
     </div>
-    <div class="icon-card">
-      <div class="icon-circle">💰</div>
-      <div class="t-small c-body-dk" style="font-size:20pt; font-weight:700;">Garansi Uang Kembali dalam 14 Hari</div>
+
+    <div class="fac-3col">
+      <div class="fac-card">
+        <div class="fac-card-head">Cutting Dept.</div>
+        <div class="fac-desc">High-precision cutting of raw materials including leather, fabric, and synthetics using automatic cutting machines, lasers, and precision cutting dies.</div>
+        <div class="fac-cap">
+          <div class="fac-cap-label">Capacity</div>
+          <div class="fac-cap-num">73,600 <span style="font-size:13px;color:var(--muted)">Prs/Month</span></div>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-card-head">Stitching Dept.</div>
+        <div class="fac-desc">A series of industrial sewing machines operated by skilled workers that sew cut patterns into shoe uppers with consistent quality and tight tolerances.</div>
+        <div class="fac-cap">
+          <div class="fac-cap-label">Capacity</div>
+          <div class="fac-cap-num">24,700 <span style="font-size:13px;color:var(--muted)">Prs/Month</span></div>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-card-head">Assembly Dept.</div>
+        <div class="fac-desc">Full assembly of upper and bottom components into a finished shoe, utilizing conveyor technology for high efficiency and consistent throughput.</div>
+        <div class="fac-cap">
+          <div class="fac-cap-label">Capacity</div>
+          <div class="fac-cap-num">24,700 <span style="font-size:13px;color:var(--muted)">Prs/Month</span></div>
+        </div>
+      </div>
     </div>
+
+    <div class="fac-img-strip">
+      <div class="fac-img-box">
+        <div class="fac-img-ph">Cutting Floor Photo</div>
+        <div class="fac-img-lbl">Cutting</div>
+      </div>
+      <div class="fac-img-box">
+        <div class="fac-img-ph">Stitching Line Photo</div>
+        <div class="fac-img-lbl">Stitching</div>
+      </div>
+      <div class="fac-img-box">
+        <div class="fac-img-ph">Assembly Line Photo</div>
+        <div class="fac-img-lbl">Assembly</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 03</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 4 — CUTTING DEPARTMENT
+════════════════════════════════════════════════ -->
+<div class="page" id="pg4">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">04 / 12</div>
+      <div class="ph-title">Cutting Department</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Cutting</div>
+  </div>
+  <div class="pb">
+    <div class="dept-header">
+      <div class="dept-name-block">
+        <div class="dept-eyebrow">Process 01</div>
+        <div class="dept-h2">Cutting<br>Department</div>
+      </div>
+      <div class="dept-cap-box">
+        <div class="dept-cap-label">Monthly Capacity</div>
+        <div class="dept-cap-num">73,600</div>
+        <div class="dept-cap-unit">Pairs / Month</div>
+      </div>
+    </div>
+
+    <div class="dept-body">
+      <div class="dept-desc">
+        <div class="dept-eyebrow" style="margin-bottom:12px;">Overview</div>
+        <div class="dept-desc-text">The Cutting Department is the first step in the production chain. Raw materials — leather, fabric, and synthetic components — are processed using automatic cutting machines, laser cutters, and precision cutting dies. Each piece is cut to exact specifications, ensuring consistent quality and minimal material waste throughout the production run.</div>
+      </div>
+      <div class="dept-specs">
+        <div class="spec-row">
+          <div class="spec-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 8v8"/></svg></div>
+          <div>
+            <div class="spec-label">Output</div>
+            <div class="spec-val">73,600 Prs/Mo</div>
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div>
+            <div class="spec-label">Operation</div>
+            <div class="spec-val">Multi-Shift</div>
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div>
+            <div class="spec-label">Tech</div>
+            <div class="spec-val">Auto · Laser · Die</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-img-row">
+      <div class="dept-img">Cutting Machine<br>Photo</div>
+      <div class="dept-img">Material Stack<br>Photo</div>
+      <div class="dept-img">Cut Components<br>Photo</div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 04</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 5 — STITCHING DEPARTMENT
+════════════════════════════════════════════════ -->
+<div class="page" id="pg5">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">05 / 12</div>
+      <div class="ph-title">Stitching Department</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Stitching</div>
+  </div>
+  <div class="pb">
+    <div class="dept-header">
+      <div class="dept-name-block">
+        <div class="dept-eyebrow">Process 02</div>
+        <div class="dept-h2">Stitching<br>Department</div>
+      </div>
+      <div class="dept-cap-box" style="border-left-color:var(--sky);">
+        <div class="dept-cap-label">Monthly Capacity</div>
+        <div class="dept-cap-num" style="color:var(--sky);">24,700</div>
+        <div class="dept-cap-unit">Pairs / Month</div>
+      </div>
+    </div>
+
+    <div class="dept-body">
+      <div class="dept-desc">
+        <div class="dept-eyebrow" style="margin-bottom:12px;color:var(--sky);">Overview</div>
+        <div class="dept-desc-text">The Stitching Department transforms individually cut components into fully assembled shoe uppers. A series of industrial sewing machines, operated by trained workers, join the pieces together using precision stitching techniques. Quality is monitored at every station to ensure each upper meets the required specifications before moving to assembly.</div>
+      </div>
+      <div class="dept-specs">
+        <div class="spec-row">
+          <div class="spec-ico" style="background:#0d2a40;"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+          <div>
+            <div class="spec-label">Output</div>
+            <div class="spec-val">24,700 Prs/Mo</div>
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-ico" style="background:#0d2a40;"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <div class="spec-label">Team</div>
+            <div class="spec-val">Skilled Workers</div>
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-ico" style="background:#0d2a40;"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <div class="spec-label">QC</div>
+            <div class="spec-val">Per-Station Check</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-img-row">
+      <div class="dept-img">Sewing Line<br>Photo</div>
+      <div class="dept-img">Worker at Machine<br>Photo</div>
+      <div class="dept-img">Finished Upper<br>Photo</div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 05</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 6 — ASSEMBLY DEPARTMENT
+════════════════════════════════════════════════ -->
+<div class="page" id="pg6">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">06 / 12</div>
+      <div class="ph-title">Assembly Department</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Assembly</div>
+  </div>
+  <div class="pb">
+    <div class="dept-header">
+      <div class="dept-name-block">
+        <div class="dept-eyebrow" style="color:var(--gold);">Process 03</div>
+        <div class="dept-h2">Assembly<br>Department</div>
+      </div>
+      <div class="dept-cap-box" style="border-left-color:var(--gold);">
+        <div class="dept-cap-label">Monthly Capacity</div>
+        <div class="dept-cap-num" style="color:var(--gold);">24,700</div>
+        <div class="dept-cap-unit">Pairs / Month</div>
+      </div>
+    </div>
+
+    <div class="dept-body">
+      <div class="dept-desc">
+        <div class="dept-eyebrow" style="margin-bottom:12px;color:var(--gold);">Overview</div>
+        <div class="dept-desc-text">The Assembly Department brings together the shoe upper and sole components into a finished product. Utilizing conveyor technology for efficient workflow, each station performs a specific step — lasting, bonding, pressing, and finishing. This high-throughput approach ensures consistent quality across every pair produced while maintaining a smooth production flow from start to finish.</div>
+      </div>
+      <div class="dept-specs">
+        <div class="spec-row">
+          <div class="spec-ico" style="background:#1a1400;"><svg viewBox="0 0 24 24" stroke="var(--gold)"><path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16"/></svg></div>
+          <div>
+            <div class="spec-label">Output</div>
+            <div class="spec-val">24,700 Prs/Mo</div>
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-ico" style="background:#1a1400;"><svg viewBox="0 0 24 24" stroke="var(--gold)"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+          <div>
+            <div class="spec-label">System</div>
+            <div class="spec-val">Conveyor Line</div>
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-ico" style="background:#1a1400;"><svg viewBox="0 0 24 24" stroke="var(--gold)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <div class="spec-label">Process</div>
+            <div class="spec-val">Last · Bond · Finish</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-img-row">
+      <div class="dept-img">Assembly Line<br>Photo</div>
+      <div class="dept-img">Bonding Station<br>Photo</div>
+      <div class="dept-img">Finished Shoes<br>Photo</div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 06</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 7 — PRODUCTION CAPACITY
+════════════════════════════════════════════════ -->
+<div class="page" id="pg7">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">07 / 12</div>
+      <div class="ph-title">Production Capacity</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Capacity</div>
+  </div>
+  <div class="pb">
+    <div class="cap-intro">
+      <div class="cap-intro-text">Our production facility in Kuningan, West Java, runs three integrated departments with a combined monthly output of over 122,000 pairs. Each department is designed for scalability, allowing us to ramp production to meet partner demand while maintaining consistent quality standards.</div>
+      <div class="cap-total" style="flex-shrink:0;min-width:160px;">
+        <div class="cap-total-num">122<span>K</span></div>
+        <div class="cap-total-label">Combined Capacity<br>Pairs / Month</div>
+      </div>
+    </div>
+
+    <div class="cap-eyebrow">Department Capacity</div>
+    <table class="ctable">
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th>Process Type</th>
+          <th>Technology</th>
+          <th>Capacity / Month</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cutting Department</td>
+          <td>Raw material cutting</td>
+          <td>Auto · Laser · Die <span class="ctag">Multi-method</span></td>
+          <td>73,600 Prs</td>
+        </tr>
+        <tr>
+          <td>Stitching Department</td>
+          <td>Upper sewing</td>
+          <td>Industrial sewing machines <span class="ctag">High-speed</span></td>
+          <td>24,700 Prs</td>
+        </tr>
+        <tr>
+          <td>Assembly Department</td>
+          <td>Upper + sole assembly</td>
+          <td>Conveyor system <span class="ctag">Automated flow</span></td>
+          <td>24,700 Prs</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cap-eyebrow" style="margin-top:24px;">Capacity Breakdown</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <div style="background:var(--off);border:1px solid var(--silver);border-top:3px solid var(--cyan);padding:20px;border-radius:0 0 3px 3px;text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--navy);line-height:1;">73,600</div>
+        <div style="font-size:9.5px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:6px;">Cutting · Prs/Mo</div>
+        <div style="margin-top:10px;height:4px;background:var(--silver);border-radius:2px;overflow:hidden;">
+          <div style="width:60%;height:100%;background:var(--cyan);border-radius:2px;"></div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px;">60% of total capacity</div>
+      </div>
+      <div style="background:var(--off);border:1px solid var(--silver);border-top:3px solid var(--sky);padding:20px;border-radius:0 0 3px 3px;text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--navy);line-height:1;">24,700</div>
+        <div style="font-size:9.5px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:6px;">Stitching · Prs/Mo</div>
+        <div style="margin-top:10px;height:4px;background:var(--silver);border-radius:2px;overflow:hidden;">
+          <div style="width:20%;height:100%;background:var(--sky);border-radius:2px;"></div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px;">20% of total capacity</div>
+      </div>
+      <div style="background:var(--off);border:1px solid var(--silver);border-top:3px solid var(--gold);padding:20px;border-radius:0 0 3px 3px;text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--navy);line-height:1;">24,700</div>
+        <div style="font-size:9.5px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:6px;">Assembly · Prs/Mo</div>
+        <div style="margin-top:10px;height:4px;background:var(--silver);border-radius:2px;overflow:hidden;">
+          <div style="width:20%;height:100%;background:var(--gold);border-radius:2px;"></div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px;">20% of total capacity</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 07</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 8 — ORGANIZATION
+════════════════════════════════════════════════ -->
+<div class="page" id="pg8">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">08 / 12</div>
+      <div class="ph-title">Organization</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Org</div>
+  </div>
+  <div class="pb">
+    <div class="org-wrap">
+      <div class="org-node top">
+        <div class="org-role">President Director</div>
+        <div class="org-name empty">[ Name ]</div>
+      </div>
+      <div class="org-vline"></div>
+      <div class="org-hrow">
+        <div class="org-col">
+          <div class="org-vline" style="height:16px;"></div>
+          <div class="org-mid">
+            <div class="org-role">Factory Manager</div>
+            <div class="org-name empty">[ Name ]</div>
+          </div>
+        </div>
+        <div class="org-col">
+          <div class="org-vline" style="height:16px;"></div>
+          <div class="org-mid">
+            <div class="org-role">Planning Manager</div>
+            <div class="org-name empty">[ Name ]</div>
+          </div>
+        </div>
+        <div class="org-col">
+          <div class="org-vline" style="height:16px;"></div>
+          <div class="org-mid">
+            <div class="org-role">R &amp; D</div>
+            <div class="org-name empty">[ Name ]</div>
+          </div>
+        </div>
+        <div class="org-col">
+          <div class="org-vline" style="height:16px;"></div>
+          <div class="org-mid">
+            <div class="org-role">Marketing Team</div>
+            <div class="org-name empty">[ Name ]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="org-stats">
+      <div class="org-stat">
+        <div class="org-sn">100<sup>+</sup></div>
+        <div class="org-sl">Total Workers</div>
+      </div>
+      <div class="org-stat">
+        <div class="org-sn">3</div>
+        <div class="org-sl">Departments</div>
+      </div>
+      <div class="org-stat">
+        <div class="org-sn">1</div>
+        <div class="org-sl">Production Site</div>
+      </div>
+    </div>
+
+    <div style="background:var(--off);border:1px solid var(--silver);border-radius:3px;padding:18px 22px;margin-top:18px;">
+      <div style="font-size:11px;color:var(--mid);line-height:1.75;font-style:italic;text-align:center;">
+        Note: Names for each position are to be filled in by the company. The structure above reflects the standard operational hierarchy.
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 08</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 9 — WHY CHOOSE US
+════════════════════════════════════════════════ -->
+<div class="page" id="pg9">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">09 / 12</div>
+      <div class="ph-title">Why Choose Us</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Why Us</div>
+  </div>
+  <div class="pb">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="why-t">End-to-End Capability</div>
+          <div class="why-d">We handle the complete production process — cutting, stitching, and assembly — under one roof, giving you a seamless and reliable manufacturing partner.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="why-t">On-Time Delivery</div>
+          <div class="why-d">Our streamlined multi-department workflow is designed for consistent output and reliable delivery schedules, so your supply chain stays on track.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div>
+          <div class="why-t">Modern Technology</div>
+          <div class="why-d">From automated cutting machines and laser systems to conveyor assembly, we invest in modern equipment to maintain quality and efficiency at scale.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="why-t">Skilled Workforce</div>
+          <div class="why-d">Our team of 100+ workers brings hands-on experience in footwear manufacturing, ensuring each pair is crafted with skill and attention to detail.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-banner">
+      <div class="why-bs">
+        <div class="why-bn">3<sup>+</sup></div>
+        <div class="why-bl">Core Departments</div>
+      </div>
+      <div class="why-bs">
+        <div class="why-bn">122<sup>K</sup></div>
+        <div class="why-bl">Pairs / Month</div>
+      </div>
+      <div class="why-bs">
+        <div class="why-bn">100<sup>+</sup></div>
+        <div class="why-bl">Skilled Workers</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 09</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 10 — CONTACT & LOCATION
+════════════════════════════════════════════════ -->
+<div class="page" id="pg10">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">10 / 12</div>
+      <div class="ph-title">Contact &amp; Location</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Contact</div>
+  </div>
+  <div class="pb">
+    <div class="loc-intro">
+      <div class="loc-intro-head">Our Production Facility</div>
+      <div class="loc-intro-text">CV. Serasi Setiap Langkah operates from a single integrated production facility in Kuningan, West Java, Indonesia. Our location provides access to skilled local talent and efficient logistics to support your supply chain needs.</div>
+    </div>
+
+    <div class="loc-main">
+      <div class="loc-tag">Headquarters &amp; Factory</div>
+      <div class="loc-title">CV. Serasi Setiap Langkah</div>
+      <div class="loc-addr">Jl. Dusun Kliwon, Rt.10/Rw.03, Kaliaren,<br>Kec. Cilimus, Kab. Kuningan,<br>Jawa Barat – Indonesia</div>
+
+      <div class="loc-contact-grid">
+        <div class="loc-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.93 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.84 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div class="lci-text">
+            <div class="lci-label">Phone</div>
+            <div class="lci-val">+62 813-8888-3585</div>
+          </div>
+        </div>
+        <div class="loc-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="lci-text">
+            <div class="lci-label">Email</div>
+            <div class="lci-val">serasisetiaplangkah@gmail.com</div>
+          </div>
+        </div>
+        <div class="loc-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="lci-text">
+            <div class="lci-label">Region</div>
+            <div class="lci-val">Kuningan, West Java</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loc-workers-bar">
+      <div>
+        <div class="loc-w-num">~96<sup>+</sup></div>
+      </div>
+      <div class="loc-w-right">
+        <div class="loc-w-label">People at this location</div>
+        <div class="loc-w-desc">Our single production site currently employs approximately 96 people, with team size scaling to meet production requirements. All production, quality control, and management functions operate from this facility.</div>
+        <div class="loc-approval">
+          <div class="loc-approval-dot"></div>
+          <span>Production Facility · Kuningan, West Java</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 10</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 11 — BUSINESS PARTNERS
+════════════════════════════════════════════════ -->
+<div class="page" id="pg11">
+  <div class="ph">
+    <div class="ph-left">
+      <div class="ph-num">11 / 12</div>
+      <div class="ph-title">Business Partners</div>
+    </div>
+    <div class="ph-brand">CV. Serasi Setiap Langkah</div>
+    <div class="ph-ghost">Partners</div>
+  </div>
+  <div class="pb">
+    <div class="partners-note">
+      <p>CV. Serasi Setiap Langkah is positioned to serve global footwear brands as a trusted manufacturing subcontractor. Our integrated production capabilities make us an ideal partner for brands seeking reliable, high-quality output from Indonesia.<br><br><em style="color:var(--navy);font-style:normal;font-weight:600;">Current and prospective brand partners to be listed below.</em></p>
+    </div>
+
+    <div class="partners-grid">
+      <div class="partner-box"><div class="partner-box-name">Nike</div></div>
+      <div class="partner-box"><div class="partner-box-name">Adidas</div></div>
+      <div class="partner-box"><div class="partner-box-name">New Balance</div></div>
+      <div class="partner-box placeholder"><div class="partner-box-name">Brand Partner</div></div>
+      <div class="partner-box placeholder"><div class="partner-box-name">Brand Partner</div></div>
+      <div class="partner-box placeholder"><div class="partner-box-name">Brand Partner</div></div>
+    </div>
+
+    <div style="background:var(--off);border:1px solid var(--silver);border-radius:3px;padding:14px 20px;margin-bottom:18px;">
+      <div style="font-size:10px;color:var(--muted);text-align:center;font-style:italic;">Grey boxes indicate available partner slots. Please replace with actual brand logos and names.</div>
+    </div>
+
+    <div class="partner-cta">
+      <div class="partner-cta-text">We welcome partnerships with global and regional footwear brands seeking a reliable manufacturing base in Indonesia. Our team is ready to discuss production requirements, MOQ, lead times, and quality standards.</div>
+      <div class="partner-cta-badge">Open for<br>Partnership</div>
+    </div>
+  </div>
+  <div class="pf"><span>CV. Serasi Setiap Langkah</span><div class="pf-line"></div><span>Page 11</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     PAGE 12 — CLOSING
+════════════════════════════════════════════════ -->
+<div class="page p12" id="pg12">
+  <div class="p12-accent"></div>
+  <div class="p12-body">
+    <div class="p12-grid-bg"></div>
+    <div class="p12-rings">
+      <div class="p12-ring" style="width:700px;height:700px;"></div>
+      <div class="p12-ring" style="width:500px;height:500px;"></div>
+      <div class="p12-ring" style="width:300px;height:300px;"></div>
+    </div>
+
+    <div class="p12-pill">
+      <div class="p12-pill-dot"></div>
+      <div class="p12-pill-text">Thank You</div>
+    </div>
+
+    <div class="p12-h1">
+      Serasi
+      <em>Setiap</em>
+      Langkah
+    </div>
+    <div class="p12-sub">Manufacturing Excellence</div>
+
+    <div class="p12-rule"></div>
+
+    <div class="p12-contacts">
+      <div class="p12-ci">
+        <div class="p12-ci-ico">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.93 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.84 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="p12-ci-label">Phone</div>
+        <div class="p12-ci-val">+62 813-8888-3585</div>
+      </div>
+      <div class="p12-ci">
+        <div class="p12-ci-ico">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="p12-ci-label">Email</div>
+        <div class="p12-ci-val">serasisetiaplangkah@gmail.com</div>
+      </div>
+      <div class="p12-ci">
+        <div class="p12-ci-ico">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="p12-ci-label">Location</div>
+        <div class="p12-ci-val">Kuningan, West Java</div>
+      </div>
+    </div>
+
+    <div class="p12-logo">
+      <div class="p12-logo-sq">SSL</div>
+      <div class="p12-logo-text">CV. Serasi<br>Setiap Langkah</div>
+    </div>
+  </div>
+  <div class="p12-foot">
+    <div class="p12-foot-text">This document is confidential and intended for business use only.<br>© CV. Serasi Setiap Langkah · All Rights Reserved</div>
   </div>
 </div>
 
-
-<!-- 2.6 PROMO -->
-<div class="s-mid">
-  <div class="badge">Paket 14 Hari Turunkan Berat Badan</div>
-
-  <!-- Foto paket 1 -->
-  <div class="img-ph mt-16" style="aspect-ratio:16/9;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto banner paket 1<br>(1 Dawnty + 1 Dusktee · 14 tea bags)</span>
+<!-- ════════════════════════════════════════════════
+     COPYWRITING REFERENCE
+════════════════════════════════════════════════ -->
+<div class="copy-panel">
+  <div class="copy-header">
+    <div class="copy-header-title">📋 Copywriting Reference — Semua teks bisa di-select &amp; copy</div>
+    <div class="copy-header-note">Klik pada teks → Ctrl+A untuk select semua dalam box → Ctrl+C untuk copy</div>
   </div>
 
-  <div class="promo-card mt-20">
-    <div class="t-subhead c-body-dk">Paket 14 Hari</div>
-    <div class="t-small c-muted-dk mt-8">1 El Royal Dawnty + 1 El Royal Dusktee</div>
-    <div class="price-coret mt-12">Harga Normal Rp. 290.000</div>
-    <div class="t-label c-gold-lt" style="font-size:20pt;">Harga Promo</div>
-    <div class="price-main">Rp. 139.000,-</div>
-    <button class="cta-btn">🛒 PESAN SEKARANG</button>
+  <div class="copy-sec">
+    <div class="copy-label">Page 1 — Cover</div>
+    <div class="copy-t">Company Name: CV. Serasi Setiap Langkah
+Tagline: Manufacturing excellence in footwear — delivering precision, consistency, and care at every step.
+Stats: 3+ Departments · 100+ Workers · 122K Prs/Month
+Address: Jl. Dusun Kliwon, Rt.10/Rw.03, Kaliaren, Kec. Cilimus, Kab. Kuningan, Jawa Barat – Indonesia
+Phone: +62 813-8888-3585
+Email: serasisetiaplangkah@gmail.com</div>
   </div>
 
-  <div class="divider mt-24">
-    <div class="div-line"></div>
-    <div class="div-diamond"></div>
-    <div class="div-line"></div>
+  <div class="copy-sec">
+    <div class="copy-label">Page 2 — Vision &amp; Mission</div>
+    <div class="copy-t">VISION
+To be the most trusted partner for brands — delivering reliable, end-to-end manufacturing solutions for shoes, garments, and accessories with precision, consistency, and care.
+
+MISSION
+Our mission is to deliver innovative, high-quality manufacturing solutions for shoes, garments, and accessories by advancing technology, optimizing production, and providing efficient, reliable services that help our partners bring exceptional products to market — faster, smarter, and with confidence.
+
+VALUES
+Precision — Every cut, stitch, and assembly step executed to the highest standard.
+Reliability — Consistent output and on-time delivery for every partner, every order.
+Innovation — Continuously improving processes to bring better products to market faster.</div>
   </div>
 
-  <div class="badge mt-8">Paket Ideal Wujudkan Impian Body Goals</div>
+  <div class="copy-sec">
+    <div class="copy-label">Page 3 — Facilities Overview</div>
+    <div class="copy-t">CV. Serasi Setiap Langkah operates a fully integrated footwear manufacturing facility in Kuningan, West Java. Our production capabilities span the complete shoe-making process — from raw material cutting through stitching to final assembly — supported by modern machinery and a skilled workforce of over 100 people.
 
-  <!-- Foto paket 2 -->
-  <div class="img-ph mt-16" style="aspect-ratio:16/9;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="ic"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
-    <span>Foto banner paket 2<br>(2 Dawnty + 2 Dusktee · 28 tea bags)</span>
+CUTTING DEPT — 73,600 Prs/Month
+High-precision cutting of raw materials including leather, fabric, and synthetics using automatic cutting machines, lasers, and precision cutting dies.
+
+STITCHING DEPT — 24,700 Prs/Month
+A series of industrial sewing machines operated by skilled workers that sew cut patterns into shoe uppers with consistent quality and tight tolerances.
+
+ASSEMBLY DEPT — 24,700 Prs/Month
+Full assembly of upper and bottom components into a finished shoe, utilizing conveyor technology for high efficiency and consistent throughput.</div>
   </div>
 
-  <div class="promo-card best mt-20">
-    <div class="promo-badge">⭐ PALING HEMAT</div>
-    <div class="t-subhead c-body-dk" style="margin-top:10px;">Paket Ideal Body Goals</div>
-    <div class="t-small c-muted-dk mt-8">2 El Royal Dawnty + 2 El Royal Dusktee</div>
-    <div class="price-coret mt-12">Harga Normal Rp. 580.000</div>
-    <div class="t-label c-gold-lt" style="font-size:20pt;">Harga Promo</div>
-    <div class="price-main">Rp. 185.000,-</div>
-    <div class="t-small c-muted-dk mt-8">Hemat Rp 395.000 dari harga normal!</div>
-    <button class="cta-btn">🛒 PESAN SEKARANG</button>
+  <div class="copy-sec">
+    <div class="copy-label">Page 4 — Cutting Department</div>
+    <div class="copy-t">CUTTING DEPARTMENT
+Capacity: 73,600 Pairs / Month
+
+The Cutting Department is the first step in the production chain. Raw materials — leather, fabric, and synthetic components — are processed using automatic cutting machines, laser cutters, and precision cutting dies. Each piece is cut to exact specifications, ensuring consistent quality and minimal material waste throughout the production run.
+
+Specs:
+- Output: 73,600 Prs/Mo
+- Operation: Multi-Shift
+- Technology: Auto · Laser · Die</div>
   </div>
 
-  <div class="guarantee-box mt-24">
-    <div style="font-size:40px; margin-bottom:10px;">🛡️</div>
-    <div class="t-subhead c-gold">Garansi Uang Kembali</div>
-    <div class="t-body c-body-dk mt-12">Jika tidak ada perubahan selama 14 hari — uang kembali 100%. Tanpa syarat yang mempersulit.</div>
+  <div class="copy-sec">
+    <div class="copy-label">Page 5 — Stitching Department</div>
+    <div class="copy-t">STITCHING DEPARTMENT
+Capacity: 24,700 Pairs / Month
+
+The Stitching Department transforms individually cut components into fully assembled shoe uppers. A series of industrial sewing machines, operated by trained workers, join the pieces together using precision stitching techniques. Quality is monitored at every station to ensure each upper meets the required specifications before moving to assembly.
+
+Specs:
+- Output: 24,700 Prs/Mo
+- Team: Skilled Workers
+- QC: Per-Station Check</div>
   </div>
 
-  <div class="t-small c-muted-dk mt-20">*Harga sewaktu-waktu dapat berubah · Stok terbatas</div>
+  <div class="copy-sec">
+    <div class="copy-label">Page 6 — Assembly Department</div>
+    <div class="copy-t">ASSEMBLY DEPARTMENT
+Capacity: 24,700 Pairs / Month
+
+The Assembly Department brings together the shoe upper and sole components into a finished product. Utilizing conveyor technology for efficient workflow, each station performs a specific step — lasting, bonding, pressing, and finishing. This high-throughput approach ensures consistent quality across every pair produced while maintaining a smooth production flow from start to finish.
+
+Specs:
+- Output: 24,700 Prs/Mo
+- System: Conveyor Line
+- Process: Last · Bond · Finish</div>
+  </div>
+
+  <div class="copy-sec">
+    <div class="copy-label">Page 7 — Production Capacity</div>
+    <div class="copy-t">PRODUCTION CAPACITY SUMMARY
+Combined Monthly Capacity: 122,000+ Pairs
+
+Our production facility in Kuningan, West Java, runs three integrated departments with a combined monthly output of over 122,000 pairs. Each department is designed for scalability, allowing us to ramp production to meet partner demand while maintaining consistent quality standards.
+
+CAPACITY TABLE:
+Cutting Department | Raw material cutting | Auto · Laser · Die | 73,600 Prs/Month
+Stitching Department | Upper sewing | Industrial sewing machines | 24,700 Prs/Month
+Assembly Department | Upper + sole assembly | Conveyor system | 24,700 Prs/Month
+
+BREAKDOWN:
+Cutting: 73,600 Prs/Mo — 60% of total capacity
+Stitching: 24,700 Prs/Mo — 20% of total capacity
+Assembly: 24,700 Prs/Mo — 20% of total capacity</div>
+  </div>
+
+  <div class="copy-sec">
+    <div class="copy-label">Page 8 — Organization</div>
+    <div class="copy-t">ORGANIZATION STRUCTURE
+
+President Director: [ Name to be filled ]
+Factory Manager: [ Name to be filled ]
+Planning Manager: [ Name to be filled ]
+R &amp; D: [ Name to be filled ]
+Marketing Team: [ Name to be filled ]
+
+Total Workers: 100+
+Departments: 3
+Production Site: 1
+
+Note: Names for each position are to be filled in by the company. The structure above reflects the standard operational hierarchy.</div>
+  </div>
+
+  <div class="copy-sec">
+    <div class="copy-label">Page 9 — Why Choose Us</div>
+    <div class="copy-t">WHY CHOOSE CV. SERASI SETIAP LANGKAH?
+
+End-to-End Capability
+We handle the complete production process — cutting, stitching, and assembly — under one roof, giving you a seamless and reliable manufacturing partner.
+
+On-Time Delivery
+Our streamlined multi-department workflow is designed for consistent output and reliable delivery schedules, so your supply chain stays on track.
+
+Modern Technology
+From automated cutting machines and laser systems to conveyor assembly, we invest in modern equipment to maintain quality and efficiency at scale.
+
+Skilled Workforce
+Our team of 100+ workers brings hands-on experience in footwear manufacturing, ensuring each pair is crafted with skill and attention to detail.
+
+KEY STATS:
+3+ Core Departments · 122K Pairs/Month · 100+ Skilled Workers</div>
+  </div>
+
+  <div class="copy-sec">
+    <div class="copy-label">Page 10 — Contact &amp; Location</div>
+    <div class="copy-t">CONTACT INFORMATION
+
+Company: CV. Serasi Setiap Langkah
+Address: Jl. Dusun Kliwon, Rt.10/Rw.03, Kaliaren, Kec. Cilimus, Kab. Kuningan, Jawa Barat – Indonesia
+Phone: +62 813-8888-3585
+Email: serasisetiaplangkah@gmail.com
+Region: Kuningan, West Java
+
+WORKFORCE AT THIS LOCATION:
+~96+ People
+Production Facility · Kuningan, West Java
+
+Our single production site currently employs approximately 96 people, with team size scaling to meet production requirements. All production, quality control, and management functions operate from this facility.</div>
+  </div>
+
+  <div class="copy-sec">
+    <div class="copy-label">Page 11 — Business Partners</div>
+    <div class="copy-t">BUSINESS PARTNERS
+
+CV. Serasi Setiap Langkah is positioned to serve global footwear brands as a trusted manufacturing subcontractor. Our integrated production capabilities make us an ideal partner for brands seeking reliable, high-quality output from Indonesia.
+
+[Current partner list to be filled by the company]
+Placeholder brands shown: Nike · Adidas · New Balance
+
+We welcome partnerships with global and regional footwear brands seeking a reliable manufacturing base in Indonesia. Our team is ready to discuss production requirements, MOQ, lead times, and quality standards.
+
+CTA: Open for Partnership</div>
+  </div>
+
+  <div class="copy-sec">
+    <div class="copy-label">Page 12 — Closing</div>
+    <div class="copy-t">CLOSING PAGE
+
+Headline: Serasi Setiap Langkah
+Sub: Manufacturing Excellence
+
+Thank you for considering CV. Serasi Setiap Langkah as your manufacturing partner. We look forward to building a reliable, long-term relationship.
+
+Contact:
+Phone: +62 813-8888-3585
+Email: serasisetiaplangkah@gmail.com
+Location: Kuningan, West Java
+
+Footer: This document is confidential and intended for business use only. © CV. Serasi Setiap Langkah · All Rights Reserved</div>
+  </div>
 </div>
 
-</div><!-- end .lp -->
 </body>
 </html>
